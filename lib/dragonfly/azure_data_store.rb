@@ -21,7 +21,7 @@ module Dragonfly
     end
 
     def server_root
-      './public'
+      './public/'
     end
 
     def write(content, _opts = {})
