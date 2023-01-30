@@ -20,6 +20,10 @@ module Dragonfly
       @legacy_meta = opts[:legacy_meta]
     end
 
+    def server_root
+      '/'
+    end
+
     def write(content, _opts = {})
       filename = path_for(content.name || 'file')
       path = full_path(filename)
