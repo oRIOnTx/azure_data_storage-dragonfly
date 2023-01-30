@@ -21,7 +21,7 @@ module Dragonfly
     end
 
     def server_root
-      'https://amazingdiscoveries.blob.core.windows.net/'
+      'public'
     end
 
     def write(content, _opts = {})
