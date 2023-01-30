@@ -7,18 +7,21 @@ Dragonfly::App.register_datastore(:azure) { Dragonfly::AzureDataStore }
 module Dragonfly
   class AzureDataStore
     attr_accessor :account_name, :access_key, :container_name, :root_path,
-                  :url_scheme, :url_host, :store_meta, :legacy_meta, :server_root
+                  :url_scheme, :url_host, :store_meta, :legacy_meta
 
     def initialize(opts = {})
       @account_name = opts[:account_name]
       @access_key = opts[:access_key]
       @container_name = opts[:container_name]
       @root_path = opts[:root_path]
-      @server_root = opts[:server_root]
       @url_scheme = opts[:url_scheme] || 'http'
       @url_host = opts[:url_host]
       @store_meta = opts[:store_meta].nil? ? true : opts[:store_meta]
       @legacy_meta = opts[:legacy_meta]
+    end
+
+    def server_root
+      './public'
     end
 
     def write(content, _opts = {})
