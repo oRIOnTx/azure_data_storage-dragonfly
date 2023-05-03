@@ -21,7 +21,7 @@ module Dragonfly
     end
 
     def server_root
-      './public/'
+      'https://amazingdiscoveries-assets.azureedge.net/pictures/'
     end
 
     def write(content, _opts = {})
